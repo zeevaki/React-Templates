@@ -1,0 +1,942 @@
+@import url('https://fonts.googleapis.com/css2?family=Roboto:ital,wdth,wght@0,79.4,100..900;1,79.4,100..900&display=swap');
+
+
+/* Reset basic browser styles */
+ *{
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+    font-family: 'Roboto', sans-serif;
+}
+
+/* The main navigation bar container */
+
+.nav {
+       background-color:white;
+    padding: 15px 0;
+    }
+    
+    /* Add a new rule specifically for the row inside the navbar */
+.nav .row {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    padding: 0 24px;
+}
+
+.row {
+    width: 100%;
+    max-width: 1200px;
+    margin: 0 auto;
+   
+}
+   
+    
+
+/* Logo styling */
+.logo a {
+    color:black;
+    text-decoration: none;
+    font-size: 24px;
+    font-weight: bold;
+    letter-spacing: 1px;
+}
+
+/* Navigation links container */
+.nav-links {
+    list-style: none; /* Removes the bullet points */
+    display: flex;
+    align-items: center;
+    gap: 30px; /* Adds space between each link */
+}
+
+/* Individual link styling */
+.nav-links li a {
+    color:black;
+    text-decoration: none;
+    font-size: 16px;
+    transition: color 0.3s ease; /* Smooth transition for the hover effect */
+}
+
+/* Styling the Sign Up link to look like a button */
+.nav-links  .btn-signup {
+    background-color: #007bff; /* A nice, bright blue */
+    color: #ffffff; /* White text so it stands out */
+    text-decoration: none; /* Removes the default blue underline */
+    
+    /* PADDING: 10px top/bottom, 24px left/right */
+    padding: 10px 24px; 
+    
+    /* BORDER-RADIUS: This creates the circular/pill edges */
+    border-radius: 50px; 
+    
+    
+    /* DISPLAY: Important for links so the padding works correctly */
+    display: inline-block; 
+    
+    /* Smooth transition for the hover effect */
+    transition: background-color 0.3s ease, transform 0.2s ease;
+}
+
+/* Make it look interactive when the user hovers over it */
+.btn-signup:hover {
+    background-color:#5e18e9; /* Changes to a darker blue */
+    transform: translateY(-2px); /* Makes the button "lift" up slightly */
+}
+
+/* Hover effect for the links */
+.nav-links li a:hover {
+    color: #4c78af; /* Changes to a nice green when you hover */
+}
+
+/* Menu Backdrop */
+
+.btn_menu{
+    background-color: transparent;
+    font-size: 40px;
+    text-align: center;
+    border: none;
+    color: #6496db;
+   display: none; 
+
+}
+
+.menu_backdrop{
+    position: absolute;
+    background-color: #242424;
+    top:0;
+    left: 0;
+    width: 100%;
+    height: 100vh;
+    z-index: 1000;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+    transition: all 300ms ease;
+    opacity: 0;
+    visibility: hidden;
+}
+
+.menu--open .menu_backdrop{
+
+display: flex;
+visibility: visible;
+opacity: 1;
+
+}
+
+.menu--open{
+height: 100vh;
+overflow: hidden;
+
+}
+.menu_links{
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+}
+
+.menu_list{
+    padding: 32px;
+}
+
+.menu_link{
+    font-size: 40px;
+    color: white;
+}
+
+.btn_menu-closed{
+    position: absolute;
+right: 20px;
+top: 10px;
+padding: 8px;
+color: white;
+}
+
+
+/*HERO SECTION SPECIFIC STYLES
+   ======================================== */
+#hero {
+    /* Put top/bottom padding here so the breathing room stays outside the row */
+    padding: 80px 0; 
+}
+
+.hero-container {
+    display: flex;
+    align-items: center; 
+    justify-content: space-between;
+    margin: 0 auto;
+    padding: 0 24px; /* Keeps the text from touching the edge of mobile screens */
+    gap: 60px; 
+    
+}
+
+.hero-content {
+    flex: 4; 
+    display: flex;  
+    flex-direction: column;
+}
+
+.hero-title {
+    font-size: 48px;
+    line-height: 1.2;
+    color: #222;
+    margin-bottom: 20px;
+}
+
+.blue{
+    color:#5e18e9;
+}
+
+.hero-intro {
+    font-size: 18px;
+    color: #555;
+    line-height: 1.6;
+    margin-bottom: 40px;
+}
+
+
+/* =========================================
+   4. HERO RESPONSIVENESS (Mobile & Tablet)
+   ========================================= */
+@media (max-width: 900px) {
+    .hero-container {
+        flex-direction: column-reverse; /* Stacks the image on top of the text */
+        text-align: center; /* Centers text for mobile */
+        gap: 40px;
+    }
+    
+    .hero-content, .hero-image {
+        flex: none; /* Removes the 40/60 split */
+        width: 100%; /* Forces both sides to take full width */
+    }
+    
+    .hero-title {
+        font-size: 36px; /* Makes the heading fit better on phones */
+    }
+}
+
+/* The Rounded Email Bar */
+.email-bar {
+    display: flex;
+    background-color: #f4f5f7; /* Light grey background for the whole bar */
+    border-radius: 50px; /* Makes the entire bar a rounded pill shape */
+    padding: 6px; /* Space between the outer edge and the button */
+    border: 1px solid #e0e0e0;
+    margin-bottom: 40px;
+}
+
+.email-input {
+    flex: 1; /* Tells the input to take up all remaining space */
+    background: transparent;
+    border: none;
+    padding: 15px 20px;
+    font-size: 16px;
+    outline: none; /* Removes the blue glow when clicked */
+}
+
+.submit-btn {
+    background-color: #5e18e9; /* Your signature green! */
+    color: white;
+    border: none;
+    padding: 15px 32px;
+    border-radius: 50px; /* Matches the rounded look of the bar */
+    font-size: 16px;
+    font-weight: bold;
+    cursor: pointer;
+    transition: background-color 0.3s ease;
+}
+
+.submit-btn:hover {
+    background-color: #545883;
+}
+
+/* Trusted Customers Section */
+.trusted-customers p {
+    font-size: 14px;
+    color: #888;
+    margin-bottom: 12px;
+    font-weight: bold;
+    text-transform: uppercase;
+    letter-spacing: 1px;
+}
+
+.customer-icons {
+    display: flex;
+    gap: 24px;
+    font-size: 32px;
+    color: #a0a0a0; /* Soft grey icons */
+}
+
+
+
+.hero-image {
+    flex: 6; 
+}
+
+.hero-image img {
+    width: 100%;
+    height: auto;
+    border-radius: 12px;
+    object-fit: cover;
+    box-shadow: 0 20px 40px rgba(0,0,0,0.1); /* Adds a nice professional drop shadow */
+}
+
+
+
+
+/* =========================================
+   RESPONSIVE DESIGN (Tablets & Phones)
+   ========================================= */
+@media (max-width: 900px) {
+    .hero-section {
+        flex-direction: column-reverse; /* Stacks them and puts the image on top! */
+        padding: 40px 24px;
+        gap: 40px;
+    }
+    
+    .hero-content, .hero-image {
+        flex: none;
+        width: 100%; /* Resets widths to 100% on small screens */
+    }
+
+    .hero-title {
+        font-size: 36px;
+    }
+}
+
+/* =========================================
+   SERVICES SECTION
+   ========================================= */
+#services-section {
+    padding: 80px 0;
+    background-color: #ffffff;
+    
+}
+
+/* Header Styling */
+.services-header {
+    text-align: center;
+    max-width: 700px;
+    margin: 0 auto 60px auto; /* Centers the header text and adds space below it */
+}
+
+.small-heading {
+    display: block;
+    color:#5e18e9; /* Your signature blue */
+    font-size: 14px;
+    font-weight: 900;
+    letter-spacing: 2px;
+    margin-bottom: 12px;
+}
+
+.big-heading {
+    font-size: 40px;
+    color: #222;
+    margin-bottom: 20px;
+    line-height: 1.2;
+}
+
+.services-intro {
+    font-size: 18px;
+    color: #666;
+    line-height: 1.6;
+}
+
+/* The CSS Grid Setup */
+.services-grid {
+    display: grid;
+    /* This creates exactly 3 equal columns! */
+    grid-template-columns: repeat(3, 1fr); 
+    /* This creates a 40px gap between rows and a 30px gap between columns */
+    gap: 40px 30px; 
+}
+
+/* Individual Service Cards */
+.service-card {
+    text-align: center;
+    padding: 24px;
+    border-radius: 8px;
+    transition: transform 0.3s ease; /* Smooth hover animation */
+}
+
+.service-card:hover {
+    transform: translateY(-5px); /* Lifts the card slightly when hovered */
+}
+
+.service-icon {
+    font-size: 48px;
+    color: #5e18e9;
+    margin-bottom: 24px;
+}
+
+.service-title {
+    font-size: 22px;
+    margin-bottom: 12px;
+    color: #222;
+}
+
+.service-desc {
+    color: #666;
+    font-size: 16px;
+    line-height: 1.5;
+}
+
+/* =========================================
+   RESPONSIVE QUERIES (Mobile & Tablet)
+   ========================================= */
+
+/* Tablets (Screens 900px and smaller) */
+@media (max-width: 900px) {
+    .services-grid {
+        /* Switch from 3 columns to 2 columns */
+        grid-template-columns: repeat(2, 1fr); 
+    }
+    
+    .big-heading {
+        font-size: 32px;
+    }
+}
+
+/* Phones (Screens 600px and smaller) */
+@media (max-width: 600px) {
+    .services-grid {
+        /* Switch to 1 single column stacking vertically */
+        grid-template-columns: 1fr; 
+    }
+    
+    .services-header {
+        margin-bottom: 40px;
+    }
+}
+
+/* =========================================
+   PROFESSIONALS SECTION
+   ========================================= */
+#professionals-section {
+    padding: 100px 0; /* Generous vertical padding */
+    background-color: #ffffff; /* White background */
+}
+
+/* Specific flex container behavior for this row */
+.row-professionals {
+    display: flex;
+    align-items: center; /* Vertically centers the text against the image */
+    justify-content: space-between;
+    gap: 80px; /* Space between the illustration and the text */
+    padding: 0 24px; /* Global side padding for mobile safety */
+}
+
+/* =========================================
+   LEFT portion (Illustration)
+   ========================================= */
+.pros-image-wrapper {
+    flex: 1; /* Takes up exactly 50% of the row */
+    display: flex;
+    justify-content: center;
+}
+
+.img-design {
+    width: 100%;
+    max-width: 450px; /* Prevents the illustration from getting too huge */
+    height: auto;
+}
+
+/* =========================================
+   RIGHT portion (Content)
+   ========================================= */
+.pros-content {
+    flex: 1; /* Takes up exactly 50% of the row */
+    display: flex;
+    flex-direction: column;
+    align-items: flex-start; /* Aligns all text and button to the left */
+}
+ 
+
+.pros-big-heading {
+    font-size: 44px;
+    color: #222;
+    line-height: 1.2;
+    margin-bottom: 24px;
+}
+
+.pros-paragraph {
+    font-size: 18px;
+    color: #555;
+    line-height: 1.7;
+    margin-bottom: 40px;
+}
+
+/* The Blue "Learn more" Button */
+.btn-learn-more {
+    display: inline-block;
+    background-color: #007bff; /* Bright professional blue */
+    color: #ffffff; /* White text */
+    text-decoration: none;
+    padding: 15px 35px;
+    border-radius: 50px; /* Rounded 'pill' shape */
+    font-size: 16px;
+    font-weight: 700;
+    transition: background-color 0.3s ease, transform 0.2s ease;
+    box-shadow: 0 4px 14px rgba(0, 123, 255, 0.3); /* Soft blue shadow */
+}
+
+.btn-learn-more:hover {
+    background-color: #0056b3; /* Darker blue on hover */
+    transform: translateY(-2px); /* Lifts slightly */
+}
+
+/* =========================================
+   RESPONSIVE DESIGN (Mobile & Tablet)
+   ========================================= */
+@media (max-width: 900px) {
+    .row-professionals {
+        flex-direction: column; /* Stacks image on TOP of text */
+        gap: 50px;
+        text-align: center;
+    }
+    
+    .pros-content {
+        align-items: center; /* Centers text and button on mobile */
+    }
+
+    .pros-big-heading {
+        font-size: 32px;
+    }
+}
+
+/* =========================================
+   HOW IT WORKS (STEPS) SECTION
+   ========================================= */
+#steps-section {
+    padding: 100px 0; 
+    background-color: #f9f9f9; /* Light grey background */
+}
+
+/* Specific flex behavior for this 50/50 row */
+.row-split {
+    display: flex;
+    align-items: center; 
+    justify-content: space-between;
+    gap: 60px; /* Space between the text column and the image */
+    padding: 0 24px; /* Global side padding for mobile safety */
+}
+
+/* =========================================
+   LEFT portion (Text Content)
+   ========================================= */
+.split-content {
+    flex: 1; /* Takes up 50% of the horizontal space */
+    display: flex;
+    flex-direction: column;
+}
+
+
+.split-heading {
+    font-size: 40px;
+    color: #222;
+    line-height: 1.2;
+    margin-bottom: 40px; /* Big gap before the steps start */
+}
+
+/* --- The Numbered Steps Styling --- */
+.steps-container {
+    display: flex;
+    flex-direction: column;
+    gap: 32px; /* Adds breathing room between each step */
+}
+
+.step-item {
+    display: flex;
+    align-items: flex-start; /* Aligns the icon with the top of the text */
+    gap: 20px; /* Space between the icon circle and the text */
+}
+
+.step-icon {
+    /* This creates the big gray circular icons */
+    background-color: #e4e6eb; /* Soft gray background */
+    color: #888; /* Darker gray number */
+    font-size: 24px;
+    font-weight: 900;
+    
+    /* Perfect Circle Math */
+    width: 56px;
+    height: 56px;
+    border-radius: 50%;
+    
+    /* Centers the number perfectly inside the circle */
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    
+    /* CRITICAL: Prevents the circle from squishing into an oval on small screens */
+    flex-shrink: 0; 
+}
+
+.step-title {
+    font-size: 22px;
+    color: #222;
+    margin-bottom: 8px;
+}
+
+.step-desc {
+    font-size: 16px;
+    color: #666;
+    line-height: 1.6;
+}
+
+/* =========================================
+   RIGHT portion (Image Column)
+   ========================================= */
+.split-image {
+    flex: 1; /* Takes up 50% of the horizontal space */
+}
+
+.split-image img {
+    width: 100%;
+    height: auto;
+    border-radius: 12px; 
+    display: block;
+    box-shadow: 0 15px 30px rgba(0,0,0,0.08); /* Soft drop shadow */
+}
+
+/* =========================================
+   RESPONSIVE DESIGN (Mobile & Tablet)
+   ========================================= */
+@media (max-width: 900px) {
+    .row-split {
+        flex-direction: column-reverse; /* Stacks image on TOP of the steps on mobile */
+        gap: 50px;
+    }
+    
+    .split-heading {
+        font-size: 32px;
+    }
+}
+
+/* =========================================
+   PRICING SECTION
+   ========================================= */
+#pricing-section {
+    padding: 100px 0;
+    background-color: #ffffff; 
+}
+
+/* Header Styling */
+.pricing-header {
+    text-align: center;
+    margin-bottom: 60px;
+}
+
+.pricing-big-heading {
+    font-size: 40px;
+    color: #222;
+    margin-bottom: 16px;
+}
+
+.pricing-intro {
+    font-size: 18px;
+    color: #666;
+}
+
+/* The Grid Setup */
+.pricing-grid {
+    display: grid;
+    grid-template-columns: repeat(3, 1fr); /* 3 equal columns */
+    gap: 30px;
+    align-items: center; /* Keeps cards centered while letting the middle one grow */
+}
+
+/* Individual Pricing Cards */
+.pricing-card {
+    background-color: #e9eef0;
+    border: 1px solid #94c0f0;
+    border-radius: 12px;
+    padding: 40px 30px;
+    text-align: center;
+    transition: transform 0.3s ease, box-shadow 0.3s ease;
+    position: relative; /* Needed to place the "Most Popular" badge */
+}
+
+.pricing-card:hover {
+    transform: translateY(-5px);
+    box-shadow: 0 15px 30px rgba(0,0,0,0.1);
+}
+
+/* Featured (Middle) Card Styling */
+.card-featured {
+    background-color: #ffffff;
+    border: 2px solid #5e18e9; /* Your signature blue border */
+    box-shadow: 0 20px 40px rgba(0,0,0,0.08);
+    padding: 50px 30px; /* Taller padding makes it physically larger */
+}
+
+.popular-badge {
+    position: absolute;
+    top: -16px;
+    left: 50%;
+    transform: translateX(-50%);
+    background-color:#5e18e9;
+    color: white;
+    padding: 6px 16px;
+    border-radius: 20px;
+    font-size: 14px;
+    font-weight: bold;
+    letter-spacing: 1px;
+}
+
+/* Card Typography & Content */
+.plan-name {
+    font-size: 24px;
+    color: #333;
+    margin-bottom: 16px;
+}
+
+.plan-price {
+    font-size: 48px;
+    font-weight: 900;
+    color: #222;
+    margin-bottom: 30px;
+}
+
+.price-month {
+    font-size: 18px;
+    font-weight: normal;
+    color: #888;
+}
+
+/* Features List */
+.plan-features {
+    list-style: none;
+    padding: 0;
+    margin-bottom: 40px;
+    text-align: left; /* Aligns text left but the box stays centered */
+}
+
+.plan-features li {
+    font-size: 16px;
+    color: #555;
+    margin-bottom: 16px;
+    display: flex;
+    align-items: center;
+    gap: 12px; 
+}
+
+.plan-features i {
+    color:#5e18e9; /* Green checkmarks */
+    font-size: 18px;
+}
+
+/* Rounded Buy Buttons */
+.btn-buy {
+    display: block; 
+    background-color: #b2c2eb;
+    color: #333;
+    text-decoration: none;
+    padding: 15px 0;
+    border-radius: 50px; /* Perfectly rounded edges! */
+    font-size: 16px;
+    font-weight: bold;
+    transition: background-color 0.3s ease;
+}
+
+.btn-buy:hover {
+    background-color: #d2d5db;
+}
+
+/* Special Button for the Featured Card */
+.btn-buy-featured {
+    background-color:#007bff;
+    color: white;
+}
+
+.btn-buy-featured:hover {
+    background-color:#5e18e9;
+}
+
+/* =========================================
+   RESPONSIVE DESIGN (Mobile & Tablet)
+   ========================================= */
+@media (max-width: 900px) {
+    .pricing-grid {
+        grid-template-columns: 1fr; /* Instantly stacks them into 1 single column! */
+        gap: 40px;
+        max-width: 500px; /* Keeps the cards from getting too wide on an iPad */
+        margin: 0 auto; /* Centers the stacked cards */
+    }
+    
+    .card-featured {
+        padding: 40px 30px; /* Normalizes the height on mobile so they look uniform */
+    }
+    
+    .pricing-big-heading {
+        font-size: 32px;
+    }
+}
+
+/* =========================================
+   FOOTER SECTION
+   ========================================= */
+#main-footer {
+    background-color: #0b1a30; /* A rich, deep navy blue */
+    padding: 80px 0 40px 0; /* Lots of space on top, less on bottom */
+    color: #ffffff; /* White text for contrast */
+}
+
+/* --- Top Portion: 5 Column Grid --- */
+.footer-links-row {
+    display: grid;
+    grid-template-columns: repeat(5, 1fr); /* Divides into 5 equal columns */
+    gap: 20px;
+}
+
+.footer-col h4 {
+    color: #ffffff;
+    font-size: 14px;
+    font-weight: 900;
+    letter-spacing: 1.5px;
+    margin-bottom: 24px;
+}
+
+.footer-col ul {
+    list-style: none; /* Removes bullet points */
+    padding: 0;
+}
+
+.footer-col ul li {
+    margin-bottom: 12px;
+}
+
+.footer-col ul li a {
+    color: #9ba4b5; /* A soft, readable grey-blue */
+    text-decoration: none;
+    font-size: 16px;
+    transition: color 0.3s ease, padding-left 0.3s ease; /* Smooth hover animation */
+}
+
+.footer-col ul li a:hover {
+    color: #007bff; /* Bright blue on hover */
+    padding-left: 5px; /* Creates a cool "slide right" effect when hovered */
+}
+
+/* --- Middle Portion: Dividing Line --- */
+.footer-divider {
+    border: none;
+    border-top: 1px solid rgba(255, 255, 255, 0.1); /* Very light, slightly transparent white line */
+    margin: 40px 0; /* Space above and below the line */
+}
+
+/* --- Bottom Portion: Logo, Copyright, Socials --- */
+.footer-bottom-row {
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+}
+
+.footer-logo {
+    flex: 1; /* Takes up left third */
+    text-align: left;
+}
+
+.footer-logo a {
+    color: #ffffff;
+    text-decoration: none;
+    font-size: 24px;
+    font-weight: bold;
+    letter-spacing: 1px;
+}
+
+.footer-copyright {
+    flex: 1; /* Takes up middle third */
+    text-align: center; /* Forces the text to the dead center of the screen */
+    color: #9ba4b5;
+    font-size: 14px;
+}
+
+.footer-socials {
+    flex: 1; /* Takes up right third */
+    display: flex;
+    justify-content: flex-end; /* Pushes the icons to the far right */
+    gap: 16px;
+}
+
+.footer-socials a {
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    width: 36px;
+    height: 36px;
+    background-color: rgba(255, 255, 255, 0.05); /* Very subtle circle background */
+    color: #ffffff;
+    border-radius: 50%; /* Makes the background perfectly round */
+    text-decoration: none;
+    font-size: 16px;
+    transition: background-color 0.3s ease, transform 0.3s ease;
+}
+
+.footer-socials a:hover {
+    background-color: #007bff; /* Bright blue background on hover */
+    transform: translateY(-3px); /* Makes the icon lift up */
+}
+
+/* =========================================
+   RESPONSIVE DESIGN (Mobile & Tablet)
+   ========================================= */
+@media (max-width: 900px) {
+    /* Tablet: Switch from 5 columns to 3 columns, then wrap the last 2 */
+    .footer-links-row {
+        grid-template-columns: repeat(3, 1fr);
+        gap: 40px 20px;
+    }
+}
+
+@media (max-width: 600px) {
+    /* Mobile: Stack everything into 1 single column */
+    .footer-links-row {
+        grid-template-columns: 1fr;
+        text-align: center; /* Center the links for easy tapping */
+    }
+
+    /* Stack the bottom row elements vertically */
+    .footer-bottom-row {
+        flex-direction: column;
+        gap: 24px;
+    }
+
+    /* Reset the flex layout so they center nicely on top of each other */
+    .footer-logo, .footer-copyright, .footer-socials {
+        flex: none;
+        text-align: center;
+        justify-content: center; /* Centers the social icons */
+    }
+}
+
+  
+
+/* =========================================
+   NAVBAR RESPONSIVE DESIGN
+   ========================================= */
+@media (max-width: 900px) {
+    .nav-links {
+        display: none; /* Hides the desktop links on mobile */
+    }
+    
+    .btn_menu {
+        display: block; /* Shows the hamburger button on mobile */
+        position: absolute;
+        right: 24px;
+        top: 18px;
+    
+    }
+}
+
+/* DESKTOP FAILSAFE */
+/* If the screen is larger than a tablet, force the mobile menu to stay hidden */
+@media (min-width: 901px) {
+    .menu_backdrop {
+        display: none !important; 
+        visibility: hidden !important;
+        opacity: 0 !important;
+    }
+}
+
